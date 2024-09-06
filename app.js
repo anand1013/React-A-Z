@@ -1,12 +1,15 @@
+import React from "react"; //"react" coming from node_modules
+import ReactDOM from "react-dom/client";
+
 const heading = React.createElement(
   "h1",
   { id: "header", key: "header" },
-  "Hello React"
+  "Hello React ANAND HERE.....😎😎😎😎😎😎"
 );
 const subHeading = React.createElement(
   "span",
   { id: "subHeader", key: "subHeader" },
-  "React Description"
+  "ANAND learning React 🔥🔥🔥"
 );
 
 const container = React.createElement("div", { id: "container" }, [
