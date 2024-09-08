@@ -1,27 +1,31 @@
 import React from "react"; //"react" coming from node_modules
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
-  "h1",
-  { id: "header", key: "header" },
-  "Hello React ANAND HERE.....😎😎😎😎😎😎"
-);
-const subHeading = React.createElement(
-  "span",
-  { id: "subHeader", key: "subHeader" },
-  "ANAND learning React 🔥🔥🔥"
-);
-
-const container = React.createElement("div", { id: "container" }, [
-  heading,
-  subHeading,
-]);
-console.log(heading);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-//createElement => create and object
-//render => convert to html
-root.render(container);
+// js engine donot know jsx .. so it get transpiled (babel lies inside Parcel) before reaching js engine
+// => jsx transpiled to react.createElement
 
-//jsx -- we can replace create element using jsx
+// react element
+const JsxHeading = () => (
+  <h1 id="heading" className="header">
+    Hello React 🙋‍♂️ ANAND HERE.... JSX 😎
+  </h1>
+);
+
+const MyHeadingComponent = () => (
+  <div>
+    {JsxHeading()}
+    <h3>heading component</h3>
+    <JsxHeading />
+  </div>
+);
+
+// react ecomponet
+// 1. class compoent  - OLD
+// 2. functional componet - NEW
+root.render(<MyHeadingComponent />);
+
+//React.createElement => create an object and when we render to browser it will become HTML
+//render => convert to html
+//jsx -- we can replace React.createElement using jsx
